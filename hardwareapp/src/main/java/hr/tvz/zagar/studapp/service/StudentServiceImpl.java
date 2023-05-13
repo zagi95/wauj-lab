@@ -20,13 +20,13 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<StudentDTO> findAll() {
         return studentRepository.findAll().stream()
-                .map(student -> new StudentDTO(student.getJmbag(), student.getEcts(), student.needsToPay()))
+                .map(student -> new StudentDTO(student.getFirstName(), student.getLastName(), student.getJmbag(), student.getNumberOfECTS(), student.needsToPay()))
                 .collect(Collectors.toList());
     }
     @Override
     public Optional<StudentDTO> findStudentByJMBAG(String JMBAG) {
         return studentRepository.findStudentByJMBAG(JMBAG).stream()
-                .map(student -> new StudentDTO(student.getJmbag(), student.getEcts(), student.needsToPay()))
+                .map(student -> new StudentDTO(student.getFirstName(), student.getLastName(), student.getJmbag(), student.getNumberOfECTS(), student.needsToPay()))
                 .findAny();
     }
     @Override
@@ -34,8 +34,10 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.updateStudentByJMBAG(student)
                 .map(s ->
                         new StudentDTO(
+                                s.getFirstName(),
+                                s.getLastName(),
                                 s.getJmbag(),
-                                s.getEcts(),
+                                s.getNumberOfECTS(),
                                 s.needsToPay()
                         ));
     }
@@ -46,7 +48,7 @@ public class StudentServiceImpl implements StudentService {
         }
         else {
             return studentRepository.save(student)
-                    .map(s -> new StudentDTO(s.getJmbag(), s.getEcts(), s.needsToPay()));
+                    .map(s -> new StudentDTO(s.getFirstName(), s.getLastName(), s.getJmbag(), s.getNumberOfECTS(), s.needsToPay()));
         }
     }
     @Override

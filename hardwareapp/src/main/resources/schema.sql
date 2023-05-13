@@ -21,7 +21,7 @@ create table if not exists student_course (
     constraint fk_course foreign key (course_id) references course(id)
 );
 
-create table if not exists "user" (
+create table if not exists user (
     id identity,
     username varchar(100) not null,
     password varchar(250) not null,
@@ -37,6 +37,6 @@ create table if not exists authority (
 create table if not exists user_authority (
     user_id bigint not null,
     authority_id bigint not null,
-    constraint fk_user foreign key (user_id) references "user"(id),
+    constraint fk_user foreign key (user_id) references user(id),
     constraint fk_authority foreign key (authority_id) references authority(id)
 );

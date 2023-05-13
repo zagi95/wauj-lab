@@ -68,7 +68,7 @@ public class JdbcStudentRepository implements StudentRepository{
                 student.getFirstName(),
                 student.getLastName(),
                 student.getDateOfBirth(),
-                student.getEcts(),
+                student.getNumberOfECTS(),
                 student.getJmbag()
         );
         System.out.println("prrrrrrrrr: " + executed + "\n");
@@ -91,7 +91,7 @@ public class JdbcStudentRepository implements StudentRepository{
         values.put("last_name", student.getLastName());
         values.put("date_of_birth", student.getDateOfBirth());
         values.put("jmbag", student.getJmbag());
-        values.put("ects_points", student.getEcts());
+        values.put("ects_points", student.getNumberOfECTS());
         return inserter.executeAndReturnKey(values).longValue();
     }
 

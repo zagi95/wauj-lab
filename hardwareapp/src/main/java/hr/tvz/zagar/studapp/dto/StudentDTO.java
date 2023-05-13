@@ -1,31 +1,44 @@
 package hr.tvz.zagar.studapp.dto;
 
 public class StudentDTO {
-    private final String jmbag;
-    private final Integer ects;
-    private final boolean needsToPay;
 
-    public StudentDTO(String jmbag, Integer ects, boolean needsToPay) {
+    private final String firstName;
+    private final String lastName;
+    private final String jmbag;
+    private final Integer numberOfECTS;
+    private final boolean tuitionShouldBePayed;
+
+    public StudentDTO(String firstName, String lastName, String jmbag, Integer numberOfECTS, boolean tuitionShouldBePayed) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.jmbag = jmbag;
-        this.ects = ects;
-        this.needsToPay = needsToPay;
+        this.numberOfECTS = numberOfECTS;
+        this.tuitionShouldBePayed = tuitionShouldBePayed;
     }
 
     public String getJmbag() {
         return jmbag;
     }
-    public Integer getEcts() {
-        return ects;
+    public Integer getNumberOfECTS() {
+        return numberOfECTS;
     }
-    public boolean isNeedsToPay() {
-        return needsToPay;
+    public boolean isTuitionShouldBePayed() {
+        return tuitionShouldBePayed;
     }
     @Override
     public String toString() {
         return "StudentDTO{" +
                 "JMBAG='" + jmbag + '\'' +
-                ", numberOfECTS=" + ects +
-                ", tuitionShouldBePaid=" + needsToPay +
+                ", numberOfECTS=" + numberOfECTS +
+                ", tuitionShouldBePaid=" + tuitionShouldBePayed +
                 '}';
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 }

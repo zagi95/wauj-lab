@@ -3,7 +3,7 @@ package hr.tvz.zagar.studapp.repository;
 import hr.tvz.zagar.studapp.command.StudentCommand;
 import hr.tvz.zagar.studapp.dto.StudentDTO;
 import hr.tvz.zagar.studapp.entity.Student;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 
 import java.util.List;
 import java.util.Optional;

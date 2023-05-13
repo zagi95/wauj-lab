@@ -1,15 +1,13 @@
 package hr.tvz.zagar.studapp.dto;
 
-import hr.tvz.zagar.studapp.entity.Authority;
-
 import java.util.Set;
 
 public class UserDTO {
     private Long id;
-    private String username;
-    private String firstName;
-    private String lastName;
-    private Set<String> authorities;
+    private final String username;
+    private  final String firstName;
+    private final String lastName;
+    private final Set<String> authorities;
 
     public UserDTO(Long id, String username, String firstName, String lastName, Set<String> authorities) {
         this.id = id;
@@ -21,22 +19,6 @@ public class UserDTO {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setAuthorities(Set<String> authorities) {
-        this.authorities = authorities;
     }
 
     public Long getId() {

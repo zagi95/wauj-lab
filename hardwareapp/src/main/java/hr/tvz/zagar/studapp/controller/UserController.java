@@ -19,8 +19,9 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    @GetMapping("/current_user")
+    @GetMapping("/current-user")
     public ResponseEntity<UserDTO> getCurrentUser() {
+        System.out.println("getCurrentUser");
         return SecurityUtils.getCurrentUserUsername()
                 .map(
                         username -> userService.findByUsername(username)

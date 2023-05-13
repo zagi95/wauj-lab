@@ -4,7 +4,7 @@ import hr.tvz.zagar.studapp.command.StudentCommand;
 import hr.tvz.zagar.studapp.dto.StudentDTO;
 import hr.tvz.zagar.studapp.entity.Student;
 import hr.tvz.zagar.studapp.service.StudentService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -46,7 +46,7 @@ public class StudentController {
                         command.getLastName(),
                         command.getDateOfBirth(),
                         command.getJmbag(),
-                        command.getEcts()
+                        command.getNumberOfECTS()
                 ))
                 .map(
                         studentDto -> ResponseEntity
@@ -72,7 +72,7 @@ public class StudentController {
                     command.getLastName(),
                     command.getDateOfBirth(),
                     command.getJmbag(),
-                    command.getEcts())
+                    command.getNumberOfECTS())
                 )
                 .map(
                         studentDTO -> ResponseEntity

@@ -1,11 +1,8 @@
 package hr.tvz.zagar.studapp.repository;
 
-import hr.tvz.zagar.studapp.command.StudentCommand;
-import hr.tvz.zagar.studapp.dto.StudentDTO;
 import hr.tvz.zagar.studapp.entity.Student;
 import org.springframework.stereotype.Repository;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -35,7 +32,7 @@ public class StudentRepositoryImpl implements StudentRepository {
     public Optional<Student> updateStudentByJMBAG(Student student) {
         return this.studentList.stream()
                 .filter(s -> s.getJmbag().equals(student.getJmbag()))
-                .peek(s -> s.setEcts(student.getEcts()))
+                .peek(s -> s.setNumberOfECTS(student.getNumberOfECTS()))
                 .findAny();
     }
 

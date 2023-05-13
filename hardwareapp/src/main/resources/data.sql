@@ -19,10 +19,10 @@ insert into student_course (id, student_id, course_id)
 //insert into student_course (id, student_id, course_id)
 //            values (1, 2, 2);
 
-insert into "user" (id, username, password, first_name, last_name)
-            values (1, 'admin', '$2a$12$BFNTNVILK3ovqOiWByOVRO2xT3/Wf1gXq/sFP9glPaxMMQcK2Dqii', 'first1', 'last1'); -- password je 'test'
-insert into "user" (id, username, password, first_name, last_name)
-            values (2, 'user', '$2a$12$Zc0oBshcclIjh450DJ3Q3uwXy/ifX3xev1s8njlh8wfBtM/lgsWbe', 'first2', 'last2'); -- password je 'test'
+insert into user (id, username, password, first_name, last_name)
+            values (1, 'admin', '$2a$10$TYExkmI7uVXXVadrdTTa0OQTOorVV32jTjK.Py2BPQjEojbAx96yy', 'first1', 'last1');
+insert into user (id, username, password, first_name, last_name)
+            values (2, 'user', '$2a$10$TYExkmI7uVXXVadrdTTa0OQTOorVV32jTjK.Py2BPQjEojbAx96yy', 'first2', 'last2');
 insert into authority (id, name)
             values (1, 'ROLE_ADMIN');
 insert into authority (id, name)

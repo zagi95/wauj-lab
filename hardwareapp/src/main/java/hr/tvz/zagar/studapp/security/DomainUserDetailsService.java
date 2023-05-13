@@ -27,7 +27,7 @@ public class DomainUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(final String username) {
 
         return userRepository
-                .findByUsername(username)
+                .findOneByUsername(username)
                 .map(this::createSpringSecurityUser)
                 .orElseThrow(() -> new UsernameNotFoundException("User " + username + " was not found in the database"));
     }

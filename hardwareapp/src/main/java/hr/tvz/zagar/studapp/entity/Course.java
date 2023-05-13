@@ -1,8 +1,6 @@
 package hr.tvz.zagar.studapp.entity;
 
-import jakarta.persistence.*;
-
-import java.util.List;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity

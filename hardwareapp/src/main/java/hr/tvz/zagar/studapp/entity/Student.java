@@ -1,10 +1,9 @@
 package hr.tvz.zagar.studapp.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Student {
@@ -16,7 +15,7 @@ public class Student {
     private LocalDate dateOfBirth;
     private String jmbag;
     @Column(name = "ects_points")
-    private Integer ects;
+    private Integer numberOfECTS;
     @ManyToMany(targetEntity = Course.class)
     @JoinTable(
             name = "student_course",
@@ -25,13 +24,13 @@ public class Student {
     )
     private List<Course> courses;
 
-    public Student(Long id, String firstName, String lastName, LocalDate dateOfBirth, String jmbag, Integer ects) {
+    public Student(Long id, String firstName, String lastName, LocalDate dateOfBirth, String jmbag, Integer numberOfECTS) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.jmbag = jmbag;
-        this.ects = ects;
+        this.numberOfECTS = numberOfECTS;
     }
 
     public Student() {
@@ -50,8 +49,8 @@ public class Student {
     public String getJmbag() {
         return jmbag;
     }
-    public Integer getEcts() {
-        return ects;
+    public Integer getNumberOfECTS() {
+        return numberOfECTS;
     }
     public boolean needsToPay(){
         return dateOfBirth.isAfter(LocalDate.now().minusYears(26));
@@ -65,8 +64,8 @@ public class Student {
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-    public void setEcts(Integer ects) {
-        this.ects = ects;
+    public void setNumberOfECTS(Integer ects) {
+        this.numberOfECTS = ects;
     }
 
     public Long getId() {
